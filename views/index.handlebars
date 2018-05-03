@@ -1,0 +1,29 @@
+<div class='container'>
+    <div id="availableBurgers">
+        <ul id='availableList'>
+            {{#each burgers}} {{#unless this.devoured}}
+            <li class="available_burger">
+                <span class="burgers">
+                    {{this.id}} {{this.burger_name}}
+                </span>
+                <span class="devourBtn">
+                    <form action="/{{this.id}}?_method=PUT" method='POST'>
+                    </form>
+                </span>
+            </li>
+            {{/unless}} {{/each}}
+        </ul>
+    </div>
+    <div id="newBurger">
+        <form class="updateForm" action='/' method="POST">
+
+            <div class="form">
+                <textarea id="newBurgerText" rows="4" name="burger_name">
+
+            </textarea>
+                <button type="submit" id='newBurgerBTN'>Submit</button>
+            </div>
+        </form>
+        <p>Enter a burger!</p>
+    </div>
+</div>
